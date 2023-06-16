@@ -1,7 +1,7 @@
 ﻿using OpenTK.Mathematics;
 using System;
 
-namespace CoreEngine.ReyCast
+namespace Sagittarius.Core.Reycasting
 {
     class TopRey : IStrategyReyCanculate
     {

@@ -9,12 +9,12 @@ namespace Sagittarius.BaseClient.Controllers{
 
         private GameView gameView;
 
-        private static Byte[,] _buffer;
-        private static int _gltexture = -1;
+        
 
         public GameController() : base() {
             gameView = new GameView();
 
+            
 
             View = gameView;
         }

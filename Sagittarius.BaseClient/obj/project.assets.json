@@ -165,6 +165,9 @@
       "Sagittarius.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "OpenTK.Mathematics": "4.7.7"
+        },
         "compile": {
           "bin/placeholder/Sagittarius.Core.dll": {}
         },

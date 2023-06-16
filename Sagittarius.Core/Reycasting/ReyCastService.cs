@@ -1,9 +1,9 @@
-﻿using CoreEngine.Entitys;
-using CoreEngine.System;
-using SFML.System;
-using System;
+﻿using System;
+using OpenTK.Mathematics;
+using Sagittarius.Core.Entitys;
+using Sagittarius.Core.System;
 
-namespace CoreEngine.ReyCast{
+namespace Sagittarius.Core.Reycasting{
 
     // service for calculating the length distance between the player and the walls
     public class ReyCastService {
@@ -30,17 +30,19 @@ namespace CoreEngine.ReyCast{
 
 
         //the service interface executes the firing of beams according to the given instructions
-        public ReyContainer[] ReyCastWall(Entity entity, float fov, float depth, int CountRey) {
+        public ReyContainer[] ReyCastWall(BaseEntity entity, float fov, float depth, int CountRey) {
             Rey[] result = new Rey[CountRey];
 
             for (int i = 0; i < CountRey; i++) {
-                float ReyAngle = (entity.angle + fov / 2 - i * fov / CountRey);
+                float ReyAngle = (entity.Angle.X + fov / 2 - i * fov / CountRey);
 
+
+                Vector2 PosEntity2d = entity.Position.Xy + (entity.Size / 2);
                 ReySettings reySettings = new ReySettings(){
-                    Position = entity.Position + (entity.Size / 2),
+                    Position = new Vector3(PosEntity2d.X, PosEntity2d.Y, entity.Position.Z),
                     angle = ReyAngle,
                     originAngle = ReyAngle,
-                    entityAngle = entity.angle,
+                    entityAngle = entity.Angle.X,
                     depth = depth
                 };
 
@@ -89,14 +91,14 @@ namespace CoreEngine.ReyCast{
         private Rey ReyPushStrategy(ReySettings settings) {
             Rey result = new Rey();
 
-            Vector2f reyPos = settings.strategy.StartReyPos(settings.Position, settings.angle);
+            Vector2 reyPos = settings.strategy.StartReyPos(settings.Position.Xy, settings.angle);
             char reyWall = ' ';
 
             for (int i = 0; i < settings.depth; i++) {
 
                 if (reyPos.X < 0 || reyPos.Y < 0 || reyPos.X > level.Size.Y - 1|| reyPos.Y > level.Size.X - 1) {
                     result.Hit(new HitWall() {
-                        ReyDistance = GetDistance(reyPos, settings.Position),
+                        ReyDistance = GetDistance(reyPos, settings.Position.Xy),
                         ReyPoint = reyPos,
                         Wall = '0'
                     });
@@ -113,7 +115,7 @@ namespace CoreEngine.ReyCast{
                     if (Level.Ishalf(reyWall))
                         hit.ReyPoint += settings.strategy.NextReyPos(settings.angle) / 2;
                     
-                    hit.ReyDistance = GetDistance(hit.ReyPoint, settings.Position);
+                    hit.ReyDistance = GetDistance(hit.ReyPoint, settings.Position.Xy);
                     hit.offset = settings.strategy.GetOfset(hit.ReyPoint);
                     hit.Wall = reyWall;
 
@@ -125,7 +127,10 @@ namespace CoreEngine.ReyCast{
                 }
 
                 result.Hit(new HitFlore(){
-                    ReyDistance = GetDistance(reyPos, settings.Position),
+                    ReyDistance = GetDistance(
+                        new Vector3(reyPos.X, reyPos.Y, 0), 
+                        settings.Position
+                    ),
                     ReyPoint = reyPos,
                     Wall = reyWall,
                 });
@@ -136,8 +141,8 @@ namespace CoreEngine.ReyCast{
 
             result.Hit(new HitWall(){
                 ReyDistance = GetDistance(
-                    new Vector3f(reyPos.X, reyPos.Y, 0),
-                    new Vector3f(settings.Position.X, settings.Position.Y, 0.5f)
+                    new Vector3(reyPos.X, reyPos.Y, 0),
+                    settings.Position
                 ),
                 ReyPoint = reyPos,
                 Wall = '0'
@@ -148,11 +153,11 @@ namespace CoreEngine.ReyCast{
 
         //length check between vertical and horizontal beam reys
 
-        private float GetDistance(Vector2f PosA, Vector2f PosB) {
+        private float GetDistance(Vector2 PosA, Vector2 PosB) {
             return MathF.Abs(MathF.Sqrt(MathF.Pow(PosA.X - PosB.X, 2) + MathF.Pow(PosA.Y - PosB.Y, 2)));
         }
 
-        private float GetDistance(Vector3f PosA, Vector3f PosB){
+        private float GetDistance(Vector3 PosA, Vector3 PosB){
             return MathF.Abs(MathF.Sqrt(MathF.Pow(PosA.X - PosB.X, 2) + MathF.Pow(PosA.Y - PosB.Y, 2) + MathF.Pow(PosA.Z - PosB.Z, 2)));
         }
 
@@ -160,37 +165,6 @@ namespace CoreEngine.ReyCast{
 
     
 
-    class ReySettings {
-        public IStrategyReyCanculate strategy { get; private set; }
-        public Vector2f Position { get; set; }
-        public float angle { get; set; }
-        public float originAngle { get; set; }
-        public float entityAngle { get; set; }
-        public float depth { get; set; }
-
-        public ReySettings() {
-
-
-        }
-
-        public ReySettings(ReySettings settings) {
-            Position = settings.Position;
-            angle = settings.angle;
-            entityAngle = settings.entityAngle;
-            originAngle = settings.originAngle;
-            depth = settings.depth;
-        }
-
-        public ReySettings SetStrategy(IStrategyReyCanculate strategy) {
-            this.strategy = strategy;
-            if (strategy.GetType() == new LeftRey().GetType())
-                angle = -(angle + 90);
-            else if (strategy.GetType() == new RightRey().GetType())
-                angle = -(angle - 90);
-            else if (strategy.GetType() == new DownRey().GetType())
-                angle -= 180;
-            return this;
-        }
-    }
+    
 
 }

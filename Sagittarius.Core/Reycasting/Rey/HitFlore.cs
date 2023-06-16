@@ -1,13 +1,10 @@
-﻿using SFML.System;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenTK.Mathematics;
 
-namespace CoreEngine.ReyCast{
+
+namespace Sagittarius.Core.Reycasting
+{
     public struct HitFlore : Hit {
-        public Vector2f ReyPoint { get; set; }
+        public Vector2 ReyPoint { get; set; }
         public float ReyDistance { get; set; }
         public char Wall { get; set; }
     }

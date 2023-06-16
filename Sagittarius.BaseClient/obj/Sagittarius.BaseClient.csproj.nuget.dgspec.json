@@ -106,6 +106,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "OpenTK.Mathematics": {
+              "target": "Package",
+              "version": "[4.7.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

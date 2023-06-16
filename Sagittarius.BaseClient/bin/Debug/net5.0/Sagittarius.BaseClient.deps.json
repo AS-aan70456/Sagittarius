@@ -158,6 +158,9 @@
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
       "Sagittarius.Core/1.0.0": {
+        "dependencies": {
+          "OpenTK.Mathematics": "4.7.7"
+        },
         "runtime": {
           "Sagittarius.Core.dll": {}
         }
