@@ -1,0 +1,297 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.BaseClient\\Sagittarius.BaseClient.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.BaseClient\\Sagittarius.BaseClient.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.BaseClient\\Sagittarius.BaseClient.csproj",
+        "projectName": "Sagittarius.BaseClient",
+        "projectPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.BaseClient\\Sagittarius.BaseClient.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.BaseClient\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Core\\Sagittarius.Core.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Core\\Sagittarius.Core.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Network\\Sagittarius.Network.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Network\\Sagittarius.Network.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Platform\\Sagittarius.Platform.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Platform\\Sagittarius.Platform.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Core\\Sagittarius.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Core\\Sagittarius.Core.csproj",
+        "projectName": "Sagittarius.Core",
+        "projectPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Core\\Sagittarius.Core.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj",
+        "projectName": "Sagittarius.Graphics",
+        "projectPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Graphics\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Network\\Sagittarius.Network.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Network\\Sagittarius.Network.csproj",
+        "projectName": "Sagittarius.Network",
+        "projectPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Network\\Sagittarius.Network.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Network\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Platform\\Sagittarius.Platform.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Platform\\Sagittarius.Platform.csproj",
+        "projectName": "Sagittarius.Platform",
+        "projectPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Platform\\Sagittarius.Platform.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Platform\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "OpenTK": {
+              "target": "Package",
+              "version": "[4.7.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

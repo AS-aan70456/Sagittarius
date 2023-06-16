@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sagittarius.Core", "Sagittarius.Core\Sagittarius.Core.csproj", "{362ACA49-E06E-4B53-B142-67CFB4AB17CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sagittarius.Graphics", "Sagittarius.Graphics\Sagittarius.Graphics.csproj", "{5F7B3FAA-F279-46CD-9BFC-C35AC12A8332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sagittarius.Platform", "Sagittarius.Platform\Sagittarius.Platform.csproj", "{0D6BAA60-FAAC-4C07-B8AF-CC8ABBC147BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sagittarius.Network", "Sagittarius.Network\Sagittarius.Network.csproj", "{AE2BF9C2-1A79-4582-BE02-3AF824949230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sagittarius.BaseClient", "Sagittarius.BaseClient\Sagittarius.BaseClient.csproj", "{9ABD7541-03F7-410A-98F6-D3413C1F022F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{362ACA49-E06E-4B53-B142-67CFB4AB17CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{362ACA49-E06E-4B53-B142-67CFB4AB17CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{362ACA49-E06E-4B53-B142-67CFB4AB17CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{362ACA49-E06E-4B53-B142-67CFB4AB17CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7B3FAA-F279-46CD-9BFC-C35AC12A8332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7B3FAA-F279-46CD-9BFC-C35AC12A8332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7B3FAA-F279-46CD-9BFC-C35AC12A8332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7B3FAA-F279-46CD-9BFC-C35AC12A8332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D6BAA60-FAAC-4C07-B8AF-CC8ABBC147BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D6BAA60-FAAC-4C07-B8AF-CC8ABBC147BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D6BAA60-FAAC-4C07-B8AF-CC8ABBC147BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D6BAA60-FAAC-4C07-B8AF-CC8ABBC147BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE2BF9C2-1A79-4582-BE02-3AF824949230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE2BF9C2-1A79-4582-BE02-3AF824949230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE2BF9C2-1A79-4582-BE02-3AF824949230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE2BF9C2-1A79-4582-BE02-3AF824949230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ABD7541-03F7-410A-98F6-D3413C1F022F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ABD7541-03F7-410A-98F6-D3413C1F022F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ABD7541-03F7-410A-98F6-D3413C1F022F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ABD7541-03F7-410A-98F6-D3413C1F022F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A97B54D-45EF-4946-AB42-EFE57875954E}
+	EndGlobalSection
+EndGlobal
