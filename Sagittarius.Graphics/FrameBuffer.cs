@@ -24,6 +24,9 @@ namespace Sagittarius.Graphics{
         }
 
 
+        ~FrameBuffer(){
+            GL.DeleteTexture(_gltexture);
+        }
 
         public void Draw() {
 

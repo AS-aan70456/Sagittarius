@@ -2,16 +2,14 @@
 using System;
 
 namespace Sagittarius.Platform{
-    public class KeyBoard{
+    public static class KeyBoard{
 
-        private bool[] KeyPress;
-        
-        public KeyBoard() => KeyPress = new bool[350];
+        private static bool[] KeyPress = new bool[350];
 
-        public bool IsKeyPressed(char keys) => KeyPress[(int)((Keys)keys)];
-        public bool IsKeyPressed(Keys keys) => KeyPress[(int)keys];
-        public void KeyDown(Keys keys) => KeyPress[(int)keys] = true;
-        public void KeyUp(Keys keys) => KeyPress[(int)keys] = false;
+        public static bool IsKeyPressed(char keys) => KeyPress[(int)((Keys)keys)];
+        public static bool IsKeyPressed(Keys keys) => KeyPress[(int)keys];
+        public static void KeyDown(Keys keys) => KeyPress[(int)keys] = true;
+        public static void KeyUp(Keys keys) => KeyPress[(int)keys] = false;
         
     }
 }

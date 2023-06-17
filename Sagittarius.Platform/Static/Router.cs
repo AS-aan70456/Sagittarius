@@ -7,14 +7,12 @@ namespace Sagittarius.Platform{
 
         public static BaseController CurrentController { get; private set; }
         public static Screen Screen { get; private set; }
-        public static KeyBoard KeyBoard { get; private set; }
 
         private static Window window;
 
         public static void Init(NativeWindowSettings nativeWinSettings) {
-            Router.KeyBoard = new KeyBoard();
 
-            Router.window = new Window(GameWindowSettings.Default, nativeWinSettings, KeyBoard);
+            Router.window = new Window(GameWindowSettings.Default, nativeWinSettings);
             Screen = new Screen((uint)window.Size.X, (uint)window.Size.Y);
 
         }

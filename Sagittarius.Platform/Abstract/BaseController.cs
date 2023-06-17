@@ -14,5 +14,8 @@ namespace Sagittarius.Platform.Abstract{
 
         public abstract void Updata(FrameEventArgs args);
 
+        public virtual void MouseMove(Window sender, MouseMoveEventArgs e) { }
+        public virtual void OnKeyUp(Window sender, KeyboardKeyEventArgs e) { }
+        public virtual void OnKeyDown(Window sender, KeyboardKeyEventArgs e) { }
     }
 }

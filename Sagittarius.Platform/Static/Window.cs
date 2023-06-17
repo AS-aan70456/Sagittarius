@@ -1,28 +1,25 @@
 ﻿using OpenTK.Graphics.OpenGL4;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
-using OpenTK.Windowing.GraphicsLibraryFramework;
 using System;
 
 
 namespace Sagittarius.Platform{
-    class Window : GameWindow{
+    public class Window : GameWindow{
 
         private double fps = 0f;
         private double offsetTime;
 
-        private KeyBoard keyBoard;
-
-        public Window(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings, KeyBoard keyBoard)
+        public Window(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings)
         : base(gameWindowSettings, nativeWindowSettings){
             VSync = VSyncMode.On;
+            CursorVisible = false;
 
             Console.WriteLine(GL.GetString(StringName.Version));
             Console.WriteLine(GL.GetString(StringName.Vendor));
             Console.WriteLine(GL.GetString(StringName.Renderer));
             Console.WriteLine(GL.GetString(StringName.ShadingLanguageVersion));
 
-            this.keyBoard = keyBoard;
         }
 
         protected override void OnResize(ResizeEventArgs e){
@@ -54,13 +51,19 @@ namespace Sagittarius.Platform{
 
         protected override void OnKeyDown(KeyboardKeyEventArgs e){
             base.OnKeyDown(e);
-            keyBoard.KeyDown(e.Key);
+            KeyBoard.KeyDown(e.Key);
+            Router.CurrentController.OnKeyDown(this, e);
         }
 
         protected override void OnKeyUp(KeyboardKeyEventArgs e){
             base.OnKeyDown(e);
-            keyBoard.KeyUp(e.Key);
+            KeyBoard.KeyUp(e.Key);
+            Router.CurrentController.OnKeyUp(this, e);
         }
 
+        protected override void OnMouseMove(MouseMoveEventArgs e){
+            base.OnMouseMove(e);
+            Router.CurrentController.MouseMove(this, e);
+        }
     }
 }
