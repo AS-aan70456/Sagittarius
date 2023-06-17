@@ -21,7 +21,7 @@ namespace Sagittarius.Core.System{
         public Level(char[,] Map){
 
             this.Map = Map;
-            this.Size = Size;
+            this.Size = new Vector2(Map.GetLength(1), Map.GetLength(0));
 
 
             Void = new char[] { ' ' };

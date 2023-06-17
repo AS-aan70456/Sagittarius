@@ -1,4 +1,5 @@
-﻿using Sagittarius.Platform.Abstract;
+﻿using OpenTK.Graphics.OpenGL;
+using Sagittarius.Platform.Abstract;
 using System;
 
 
@@ -17,13 +18,33 @@ namespace Sagittarius.Platform{
         }
 
         public void Render() {
-            View?.Render(this);
+            View?.Render();
         }
 
         public void LoadView(BaseView View) {
             this.View?.Deactive();
             this.View = View;
-            this.View.Active();
+            this.View.Active(this);
+        }
+
+        public void DrawTexture(int t){
+            GL.Enable(EnableCap.Texture2D);
+            GL.Begin(PrimitiveType.Quads);
+
+            GL.BindTexture(TextureTarget.Texture2D, t);
+            GL.TexCoord2(0.0f, 0.0f);
+            GL.Vertex2(-1.0f, 1.0f);
+
+            GL.TexCoord2(0.0f, 1.0f);
+            GL.Vertex2(-1.0f, -1.0f);
+
+            GL.TexCoord2(1.0f, 1.0f);
+            GL.Vertex2(1.0f, -1.0f);
+
+            GL.TexCoord2(1.0f, 0.0f);
+            GL.Vertex2(1.0f, 1.0f);
+
+            GL.End();
         }
 
     }

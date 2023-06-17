@@ -8,6 +8,9 @@ using System;
 namespace Sagittarius.Platform{
     class Window : GameWindow{
 
+        private double fps = 0f;
+        private double offsetTime;
+
         private KeyBoard keyBoard;
 
         public Window(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings, KeyBoard keyBoard)
@@ -29,6 +32,14 @@ namespace Sagittarius.Platform{
 
         protected override void OnUpdateFrame(FrameEventArgs args){
             base.OnUpdateFrame(args);
+            offsetTime += args.Time;
+            fps++;
+
+            if (offsetTime >= 1.0f){
+                Title = fps.ToString();
+                offsetTime = 0;
+                fps = 0;
+            }
 
             Router.CurrentController.Updata(args);
         }

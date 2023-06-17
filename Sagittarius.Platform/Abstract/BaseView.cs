@@ -4,9 +4,9 @@
 namespace Sagittarius.Platform.Abstract{
     public interface BaseView{
 
-        void Render(Screen screen);
+        void Render();
 
-        void Active();
+        void Active(Screen screen);
         void Deactive();
     }
 }

@@ -28,6 +28,10 @@ namespace Sagittarius.Core.Entitys{
             IsLife = settings.IsLife;
         }
 
+
+        public void Move(float VelosityX, float VelosityY) =>
+            Move(new Vector2(VelosityX, VelosityY));
+
         public void Move(Vector2 velocity){
 
             //velocity = velocity * Router.Init().graphicsControllers.time;

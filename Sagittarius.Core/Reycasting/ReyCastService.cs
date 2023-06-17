@@ -30,7 +30,7 @@ namespace Sagittarius.Core.Reycasting{
 
 
         //the service interface executes the firing of beams according to the given instructions
-        public ReyContainer[] ReyCastWall(BaseEntity entity, float fov, float depth, int CountRey) {
+        public ReyContainer[] ReyCastWall(BaseEntity entity, float fov, float depth, uint CountRey) {
             Rey[] result = new Rey[CountRey];
 
             for (int i = 0; i < CountRey; i++) {
@@ -96,7 +96,7 @@ namespace Sagittarius.Core.Reycasting{
 
             for (int i = 0; i < settings.depth; i++) {
 
-                if (reyPos.X < 0 || reyPos.Y < 0 || reyPos.X > level.Size.Y - 1|| reyPos.Y > level.Size.X - 1) {
+                if (reyPos.X < 0 || reyPos.Y < 0 || reyPos.Y > level.Size.Y - 1|| reyPos.X > level.Size.X - 1) {
                     result.Hit(new HitWall() {
                         ReyDistance = GetDistance(reyPos, settings.Position.Xy),
                         ReyPoint = reyPos,
