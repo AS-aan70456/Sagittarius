@@ -40,9 +40,11 @@ if ((isType.BaseType != new BaseController().GetType())) {
 
 Loger.WriteLine("Starting game");
 
+ControllerAdapter adapter = new ControllerAdapter(MainController);
+
 // Start game
-Router.Init();
-Router.Redirect(MainController);
+Router.Init(WinSettings);
+Router.Redirect(adapter);
 
 
 

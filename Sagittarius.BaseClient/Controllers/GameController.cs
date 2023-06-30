@@ -1,18 +1,26 @@
-﻿using Sagittarius.Platform;
+﻿using OpenTK.Windowing.Common;
+using Sagittarius.BaseClient.Views;
+using Sagittarius.Platform;
 
 namespace Sagittarius.BaseClient.Controllers;
 
 public class GameController : BaseController {
+
     public GameController() {
-
-
-        Console.WriteLine("Azamat");    
+        GameView View = new GameView();
+        base.View = View;
     }
 
-    public void Init(){
+    public override void Active(){
 
-        Console.WriteLine("Altaria");
+    }
 
+    public override void Deactive(){
+        
+    }
+
+    public override void Updata(FrameEventArgs args){
+       
     }
 }
 
