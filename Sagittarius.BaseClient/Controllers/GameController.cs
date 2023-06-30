@@ -1,8 +1,4 @@
-﻿using OpenTK.Windowing.Common;
-using Sagittarius.BaseClient.Views;
-using Sagittarius.Platform;
-
-namespace Sagittarius.BaseClient.Controllers;
+﻿namespace Sagittarius.BaseClient.Controllers;
 
 public class GameController : BaseController {
 
@@ -19,8 +15,8 @@ public class GameController : BaseController {
         
     }
 
-    public override void Updata(FrameEventArgs args){
-       
+    public override void Updata(double args){
+
     }
 }
 

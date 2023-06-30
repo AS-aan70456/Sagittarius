@@ -11,9 +11,9 @@ public class BaseController {
     public virtual void Active() { }
     public virtual void Deactive() { }
 
-    public virtual void Updata(FrameEventArgs args) { }
+    public virtual void Updata(double time) { }
 
-    public virtual void MouseMove(MouseMoveEventArgs e) { }
-    public virtual void OnKeyUp(KeyboardKeyEventArgs e) { }
-    public virtual void OnKeyDown(KeyboardKeyEventArgs e) { }
+    public virtual void MouseMove(float x, float y) { }
+    public virtual void OnKeyUp(char key) { }
+    public virtual void OnKeyDown(char key) { }
 }

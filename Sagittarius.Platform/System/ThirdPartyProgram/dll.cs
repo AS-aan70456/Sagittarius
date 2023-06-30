@@ -11,10 +11,10 @@ class dll{
         if (File.Exists(path)){
             Assembly Ass = Assembly.LoadFile(path);
             ListTypes = Ass.GetTypes();
-            Loger.WriteLine("include dll", LogMessageType.Good);
+            Loger.WriteLine("Include dll", LogMessageType.Good);
         }
         else {
-            Loger.WriteLine("failed to include dll. error", LogMessageType.Fatal);
+            Loger.WriteLine("Failed to include dll. error", LogMessageType.Fatal);
         }
     }
     public dllClass DllClass(string FindClass) => DllClass(FindClass, null);
