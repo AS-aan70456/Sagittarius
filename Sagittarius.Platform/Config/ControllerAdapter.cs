@@ -17,7 +17,7 @@ class ControllerAdapter{
     public void Active() { Controller.Method("Active"); }
     public void Deactive() { Controller.Method("Deactive"); }
 
-    public void Updata(FrameEventArgs args) { Controller.Method("Deactive", new object[] { args });}
+    public void Updata(FrameEventArgs args) { Controller.Method("Updata", new object[] { args });}
 
     public virtual void MouseMove(MouseMoveEventArgs e) { }
     public virtual void OnKeyUp(KeyboardKeyEventArgs e) { }
