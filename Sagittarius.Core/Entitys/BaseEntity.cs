@@ -1,7 +1,7 @@
 ﻿using System;
 using OpenTK.Mathematics;
 
-namespace Sagittarius.Core.Entitys{
+namespace Sagittarius.Core{
     public class BaseEntity{
 
         public Vector3 Position { get; protected set; }

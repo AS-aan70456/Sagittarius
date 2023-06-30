@@ -1,8 +1,7 @@
 ﻿using OpenTK.Mathematics;
 using Sagittarius.Core.Reycasting;
-using Sagittarius.Core.System;
 
-namespace Sagittarius.Core.Entitys{
+namespace Sagittarius.Core{
     public class Camera : BaseEntity{
 
         public ReyContainer[] reyContainer { get; private set; }

@@ -1,16 +1,11 @@
-﻿using SFML.System;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenTK.Mathematics;
 
-namespace Client.Models.Structure{
-    class NodeData{
+namespace Sagittarius.Core.Structure;
 
-        public Vector2i StartPos { get; set; }
-        public Vector2i EndPos { get; set; }
+class NodeData{
+
+    public Vector2i StartPos { get; set; }
+    public Vector2i EndPos { get; set; }
 
 
-    }
 }

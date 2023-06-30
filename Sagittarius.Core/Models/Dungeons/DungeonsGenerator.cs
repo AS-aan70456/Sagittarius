@@ -1,13 +1,11 @@
-﻿using SFML.System;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Client.Models.Structure;
-using CoreEngine.System;
-using CoreEngine.Entitys;
+using OpenTK.Mathematics;
+using Sagittarius.Core;
+using Sagittarius.Core.Structure;
 
-namespace Client.Models.Dungeons{
+namespace Sagittarius.Core.Dungeons{
    
-
     class DungeonsGenerator{
 
         private Level Level;
@@ -45,21 +43,21 @@ namespace Client.Models.Dungeons{
             return Level;
         }
 
-        public List<Entity> GenerateEntity() {
-            List<Entity> entities = new List<Entity>();
+        public List<BaseEntity> GenerateEntity() {
+            List<BaseEntity> entities = new List<BaseEntity>();
 
             for (int i = 1; i < rooms.Count; i++) {
 
                 for (int j = 0; j < _Rand.Next(2); j++) {
 
-                    Vector2f EntityPos = new Vector2f(
+                    Vector2i EntityPos = new Vector2i(
                         rooms[i].Position.X + _Rand.Next(rooms[i].Size.X - 6) + 3,
                         rooms[i].Position.Y + _Rand.Next(rooms[i].Size.Y - 6) + 3
                     );
-                    Enemy enemy = new Enemy(new EntitySettings() {
-                        Level = Level,
-                        Position = new Vector2f(EntityPos.X, EntityPos.Y),
-                        Size = new Vector2f(0.5f, 0.5f)
+                    BaseEntity enemy = new BaseEntity(new EntitySettings() {
+                        Level = this.Level,
+                        Position = new Vector3(EntityPos.X, EntityPos.Y, 0.5f),
+                        Size = new Vector2(0.5f, 0.5f)
                     });
                     entities.Add(enemy);
                 }

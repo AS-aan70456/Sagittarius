@@ -1,8 +1,7 @@
 ﻿using OpenTK.Mathematics;
 using System;
 
-
-namespace Sagittarius.Core.Entitys{
+namespace Sagittarius.Core{
     public class EntitySettings{
 
         public Vector3 Position { get; set; }
@@ -14,6 +13,8 @@ namespace Sagittarius.Core.Entitys{
 
         public bool IsColision { get; set; }
         public bool IsLife { get; set; }
+
+        public Level Level { get; set; }
 
     }
 }

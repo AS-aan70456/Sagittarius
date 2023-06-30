@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Sagittarius.Core.Reycasting
+namespace Sagittarius.Core
 {
     // TDO Rey, reyservice into (controller, view)
     class Rey : ReyContainer{

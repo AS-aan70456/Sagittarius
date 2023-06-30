@@ -1,7 +1,7 @@
 ﻿using OpenTK.Mathematics;
 
 
-namespace Sagittarius.Core.Reycasting{
+namespace Sagittarius.Core{
     public struct HitWall : Hit{
 
         public HitWall(Vector2 Point) {

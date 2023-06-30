@@ -1,11 +1,10 @@
 ﻿using OpenTK.Mathematics;
+using Sagittarius.Core.Reycasting;
 using System;
 
 
-namespace Sagittarius.Core.Reycasting
-{
-    class ReySettings
-    {
+namespace Sagittarius.Core{
+    class ReySettings{
         public IStrategyReyCanculate strategy { get; private set; }
         public Vector3 Position { get; set; }
         public float angle { get; set; }

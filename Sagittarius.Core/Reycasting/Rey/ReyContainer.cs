@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace Sagittarius.Core.Reycasting
+namespace Sagittarius.Core
 {
     public interface ReyContainer{
 
