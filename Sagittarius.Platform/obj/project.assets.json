@@ -1,7 +1,20 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {
+    "net6.0": {
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "OpenTK/4.7.7": {
         "type": "package",
         "dependencies": {
@@ -19,19 +32,27 @@
       "OpenTK.Compute/4.7.7": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Compute.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Compute.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Compute.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Compute.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "OpenTK.Core/4.7.7": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/OpenTK.Core.dll": {}
+          "lib/netstandard2.1/OpenTK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/OpenTK.Core.dll": {}
+          "lib/netstandard2.1/OpenTK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "OpenTK.Graphics/4.7.7": {
@@ -41,19 +62,27 @@
           "OpenTK.Mathematics": "[4.7.7, 4.8.0)"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Graphics.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Graphics.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "OpenTK.Input/4.7.7": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/OpenTK.Input.dll": {}
+          "lib/netstandard2.0/OpenTK.Input.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/OpenTK.Input.dll": {}
+          "lib/netstandard2.0/OpenTK.Input.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "OpenTK.Mathematics/4.7.7": {
@@ -62,10 +91,14 @@
           "System.Runtime.CompilerServices.Unsafe": "5.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Mathematics.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Mathematics.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Mathematics.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Mathematics.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "OpenTK.OpenAL/4.7.7": {
@@ -75,10 +108,14 @@
           "OpenTK.Mathematics": "[4.7.7, 4.8.0)"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.OpenAL.dll": {}
+          "lib/netcoreapp3.1/OpenTK.OpenAL.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.OpenAL.dll": {}
+          "lib/netcoreapp3.1/OpenTK.OpenAL.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "OpenTK.redist.glfw/3.3.8.30": {
@@ -119,10 +156,14 @@
           "OpenTK.Mathematics": "[4.7.7, 4.8.0)"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.Common.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Windowing.Common.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.Common.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Windowing.Common.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "OpenTK.Windowing.Desktop/4.7.7": {
@@ -134,10 +175,14 @@
           "OpenTK.Windowing.GraphicsLibraryFramework": "[4.7.7, 4.8.0)"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.Desktop.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Windowing.Desktop.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.Desktop.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Windowing.Desktop.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "OpenTK.Windowing.GraphicsLibraryFramework/4.7.7": {
@@ -147,24 +192,82 @@
           "OpenTK.redist.glfw": "3.3.8.30"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.GraphicsLibraryFramework.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Windowing.GraphicsLibraryFramework.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.GraphicsLibraryFramework.dll": {}
+          "lib/netcoreapp3.1/OpenTK.Windowing.GraphicsLibraryFramework.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Sagittarius.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Sagittarius.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sagittarius.Core.dll": {}
+        }
+      },
+      "Sagittarius.Graphics/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Sagittarius.Graphics.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sagittarius.Graphics.dll": {}
         }
       }
     }
   },
   "libraries": {
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "OpenTK/4.7.7": {
       "sha512": "T5SV1uSNgB5dpipFsfMkTnK3IIGzUnl1J2foYu3tqmYwlqLnQfQHFZ6ILiNQMPhXdBhrjnxHIU7ZeWJdNW60sw==",
       "type": "package",
@@ -361,11 +464,24 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Sagittarius.Core/1.0.0": {
+      "type": "project",
+      "path": "../Sagittarius.Core/Sagittarius.Core.csproj",
+      "msbuildProject": "../Sagittarius.Core/Sagittarius.Core.csproj"
+    },
+    "Sagittarius.Graphics/1.0.0": {
+      "type": "project",
+      "path": "../Sagittarius.Graphics/Sagittarius.Graphics.csproj",
+      "msbuildProject": "../Sagittarius.Graphics/Sagittarius.Graphics.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0": [
-      "OpenTK >= 4.7.7"
+    "net6.0": [
+      "Newtonsoft.Json >= 13.0.3",
+      "OpenTK >= 4.7.7",
+      "Sagittarius.Core >= 1.0.0",
+      "Sagittarius.Graphics >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -374,27 +490,34 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Platform\\Sagittarius.Platform.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Platform\\Sagittarius.Platform.csproj",
       "projectName": "Sagittarius.Platform",
-      "projectPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Platform\\Sagittarius.Platform.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Platform\\Sagittarius.Platform.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Platform\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Platform\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net5.0"
+        "net6.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "projectReferences": {}
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Core\\Sagittarius.Core.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Core\\Sagittarius.Core.csproj"
+            },
+            "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -404,9 +527,13 @@
       }
     },
     "frameworks": {
-      "net5.0": {
-        "targetAlias": "net5.0",
+      "net6.0": {
+        "targetAlias": "net6.0",
         "dependencies": {
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          },
           "OpenTK": {
             "target": "Package",
             "version": "[4.7.7, )"
@@ -418,7 +545,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -427,7 +555,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

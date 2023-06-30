@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\bin\Debug\net6.0\Sagittarius.Core.deps.json
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\bin\Debug\net6.0\Sagittarius.Core.dll
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\bin\Debug\net6.0\Sagittarius.Core.pdb
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\Sagittarius.Core.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\Sagittarius.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\Sagittarius.Core.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\Sagittarius.Core.AssemblyInfo.cs
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\Sagittarius.Core.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\Sagittarius.Core.dll
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\refint\Sagittarius.Core.dll
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\Sagittarius.Core.pdb
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\ref\Sagittarius.Core.dll

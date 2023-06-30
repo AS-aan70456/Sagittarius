@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\bin\Debug\net6.0\Sagittarius.Graphics.deps.json
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\bin\Debug\net6.0\Sagittarius.Graphics.dll
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\bin\Debug\net6.0\Sagittarius.Graphics.pdb
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\obj\Debug\net6.0\Sagittarius.Graphics.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\obj\Debug\net6.0\Sagittarius.Graphics.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\obj\Debug\net6.0\Sagittarius.Graphics.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\obj\Debug\net6.0\Sagittarius.Graphics.AssemblyInfo.cs
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\obj\Debug\net6.0\Sagittarius.Graphics.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\obj\Debug\net6.0\Sagittarius.Graphics.dll
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\obj\Debug\net6.0\refint\Sagittarius.Graphics.dll
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\obj\Debug\net6.0\Sagittarius.Graphics.pdb
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Graphics\obj\Debug\net6.0\ref\Sagittarius.Graphics.dll

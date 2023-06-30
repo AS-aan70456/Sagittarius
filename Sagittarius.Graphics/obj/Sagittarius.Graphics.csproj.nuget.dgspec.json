@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj": {}
+    "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj": {
+    "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj",
         "projectName": "Sagittarius.Graphics",
-        "projectPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\ProjectDev\\Sagittarius\\Sagittarius.Graphics\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Graphics\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,21 +37,16 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "dependencies": {
-            "OpenTK": {
-              "target": "Package",
-              "version": "[4.7.7, )"
-            }
-          },
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -60,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

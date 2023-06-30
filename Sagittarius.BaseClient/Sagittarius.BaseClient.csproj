@@ -1,14 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Sagittarius.Core\Sagittarius.Core.csproj" />
     <ProjectReference Include="..\Sagittarius.Graphics\Sagittarius.Graphics.csproj" />
-    <ProjectReference Include="..\Sagittarius.Network\Sagittarius.Network.csproj" />
     <ProjectReference Include="..\Sagittarius.Platform\Sagittarius.Platform.csproj" />
   </ItemGroup>
 
