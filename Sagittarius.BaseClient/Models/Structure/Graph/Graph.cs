@@ -1,6 +1,8 @@
 ﻿using OpenTK.Mathematics;
 
-namespace Sagittarius.Core.Structure;
+#pragma warning disable CS8600 
+
+namespace Sagittarius.BaseClient.Model;
 
 class Graph{
 

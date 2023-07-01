@@ -1,6 +1,6 @@
-﻿using OpenTK.Mathematics;
+﻿namespace Sagittarius.BaseClient.Model;
 
-namespace Sagittarius.Core.Structure;
+#pragma warning disable CS8618 
 
 class Node {
     public Vector2i PositionNode { get; set; }

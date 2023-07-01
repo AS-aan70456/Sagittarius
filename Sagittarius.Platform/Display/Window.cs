@@ -2,6 +2,8 @@
 
 namespace Sagittarius.Platform;
 
+#pragma warning disable CS8618
+
 class Window : GameWindow{
     private double fps = 0f;
     private double offsetTime;
@@ -9,9 +11,10 @@ class Window : GameWindow{
     private ControllerAdapter currentController;
 
     public Window(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings)
+
     : base(gameWindowSettings, nativeWindowSettings){
         VSync = VSyncMode.On;
-        CursorVisible = false;
+        //CursorVisible = false;
 
 
         Console.WriteLine(GL.GetString(StringName.Version));
@@ -62,12 +65,13 @@ class Window : GameWindow{
 
     protected override void OnKeyDown(KeyboardKeyEventArgs e){
         base.OnKeyDown(e);
-
+        KeyBoard.KeyDown(e.Key);
         currentController.OnKeyDown(e);
     }
 
     protected override void OnKeyUp(KeyboardKeyEventArgs e){
         base.OnKeyDown(e);
+        KeyBoard.KeyUp(e.Key);
         currentController.OnKeyUp(e);
     }
 

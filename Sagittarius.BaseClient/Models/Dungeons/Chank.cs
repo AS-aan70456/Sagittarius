@@ -1,7 +1,9 @@
-﻿using OpenTK.Mathematics;
+﻿namespace Sagittarius.BaseClient.Model;
 
-namespace Sagittarius.Core.Dungeons;
-class Chank{
+#pragma warning disable CS8618 
+
+class Chank
+{
 
     public Vector2i Position { get; private set; }
 
@@ -16,9 +18,7 @@ class Chank{
         }
         set { room = value; }
     }
+    public Chank(Vector2i Position) => this.Position = Position;
 
-    public Chank(Vector2i Position) {
-        this.Position = Position;
-    }
 
 }

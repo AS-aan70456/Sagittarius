@@ -3,7 +3,7 @@ using Sagittarius.Core.Reycasting;
 
 namespace Sagittarius.Core{
     public class Camera : BaseEntity{
-
+ 
         public ReyContainer[] reyContainer { get; private set; }
         private ReyCastService ReyCastService;
 

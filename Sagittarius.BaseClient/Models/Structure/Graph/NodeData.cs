@@ -1,6 +1,6 @@
 ﻿using OpenTK.Mathematics;
 
-namespace Sagittarius.Core.Structure;
+namespace Sagittarius.BaseClient.Model;
 
 class NodeData{
 

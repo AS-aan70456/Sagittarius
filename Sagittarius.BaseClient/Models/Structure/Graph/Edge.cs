@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sagittarius.Core.Structure;
+namespace Sagittarius.BaseClient.Model;
 
 class Edge{
 

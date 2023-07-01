@@ -4,9 +4,11 @@ using System.Collections.Generic;
 
 namespace Sagittarius.Core;
 
+#pragma warning disable CS8618
+
 public class Level{
 
-    private List<BaseEntity> baseEntities;
+    private List<BaseEntity> Entities;
 
     public Vector2i SpawnPoint { get; private set; }
 
@@ -30,6 +32,10 @@ public class Level{
         Transparent = new char[] { '3', '5' };
         Collision = new char[] { '0', '1', '2', '3', '4' };
         Half = new char[] { '3', '4', '5' };
+    }
+
+    public void AddEntity(BaseEntity Entitie) {
+        Entities.Add(Entitie);
     }
 
 

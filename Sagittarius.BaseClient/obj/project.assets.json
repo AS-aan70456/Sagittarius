@@ -231,6 +231,9 @@
       "Sagittarius.Graphics/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "OpenTK": "4.7.7"
+        },
         "compile": {
           "bin/placeholder/Sagittarius.Graphics.dll": {}
         },

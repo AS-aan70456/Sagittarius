@@ -1,9 +1,9 @@
-﻿using OpenTK.Mathematics;
+﻿namespace Sagittarius.BaseClient.Model;
 
-namespace Sagittarius.Core.Dungeons;
+#pragma warning disable CS8618 
 
-
-class Room{
+class Room
+{
 
     public Vector2i Position { get; set; }
     public Vector2i Size { get; private set; }

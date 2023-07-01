@@ -6,6 +6,5 @@ global using OpenTK.Windowing.Common;
 global using OpenTK.Windowing.Desktop;
 global using OpenTK.Mathematics;
 
-using Sagittarius.Platform;
-
+global using Sagittarius.Platform.Config;
 
