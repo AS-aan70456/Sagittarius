@@ -1,6 +1,8 @@
-﻿namespace Sagittarius.Core{
-    internal class Wall{
+﻿namespace Sagittarius.Core;
+
+class Wall{
 
 
-    }
+
+
 }

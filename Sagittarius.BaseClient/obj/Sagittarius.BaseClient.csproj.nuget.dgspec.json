@@ -92,7 +92,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.Graphics\\Sagittarius.Graphics.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

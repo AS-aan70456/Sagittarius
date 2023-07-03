@@ -219,7 +219,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "OpenTK.Mathematics": "4.7.7"
+          "OpenTK.Mathematics": "4.7.7",
+          "Sagittarius.Graphics": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Sagittarius.Core.dll": {}
