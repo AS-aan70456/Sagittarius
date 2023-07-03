@@ -1,5 +1,6 @@
 ﻿using Sagittarius.BaseClient.Views;
 using Sagittarius.Core;
+using System.Reflection.Emit;
 
 namespace Sagittarius.BaseClient.Controllers;
 
@@ -20,7 +21,7 @@ public class GameController : BaseController {
         camera.fov = 60;
         camera.depth = 16;
 
-        
+        level.AddEntity(camera);
 
         GameView View = new GameView(camera);
         base.View = View;
@@ -36,19 +37,23 @@ public class GameController : BaseController {
 
     public override void Updata(double args){
 
-        if (KeyBoard.IsKeyPressed('W'))
-            camera.Move(0.1f, 0);
-        if (KeyBoard.IsKeyPressed('S'))
-            camera.Move(-0.1f, 0);
-        if (KeyBoard.IsKeyPressed('A'))
-            camera.Move(0, 0.1f); ;
-        if (KeyBoard.IsKeyPressed('D'))
-            camera.Move(0, -0.1f);
-        if (KeyBoard.IsKeyPressed('Q'))
-            camera.RotateX(1);
-        if (KeyBoard.IsKeyPressed('E'))
-            camera.RotateX(-1);
+        Vector2 velocity = new Vector2();
 
+        if (KeyBoard.IsKeyPressed('W'))
+            velocity += (5f, 0f);
+        if (KeyBoard.IsKeyPressed('S'))
+            velocity += (-5f, 0f);
+        if (KeyBoard.IsKeyPressed('A'))
+            velocity += (0f, 2f);
+        if (KeyBoard.IsKeyPressed('D'))
+            velocity += (0f, -2f);
+        if (KeyBoard.IsKeyPressed('Q'))
+            camera.RotateX(50, args);
+        if (KeyBoard.IsKeyPressed('E'))
+            camera.RotateX(-50, args);
+
+        camera.Move(velocity, args);
+        level.UpdataLevel(args);
 
         camera.Look();
         ((GameView)View).UpdataBuffer();

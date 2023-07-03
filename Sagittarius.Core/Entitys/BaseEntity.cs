@@ -4,6 +4,8 @@ using OpenTK.Mathematics;
 namespace Sagittarius.Core{
     public class BaseEntity{
 
+        public Vector3 movePosition { get; set; }
+
         public Vector3 Position { get; protected set; }
         public Vector2 Size { get; protected set; }
         public Vector2 Angle { get; protected set; }
@@ -18,6 +20,7 @@ namespace Sagittarius.Core{
 
         public BaseEntity(EntitySettings settings) {
             Position = settings.Position;
+            movePosition = settings.Position;
             Size = settings.Size;
             Angle = settings.Angle;
 
@@ -29,11 +32,11 @@ namespace Sagittarius.Core{
         }
 
 
-        public void Move(float VelosityX, float VelosityY) =>
-            Move(new Vector2(VelosityX, VelosityY));
+        public void Move(float VelosityX, float VelosityY, double time) =>
+            Move(new Vector2(VelosityX, VelosityY), time);
 
-        public void Move(Vector2 velocity){
-
+        public void Move(Vector2 velocity, double time){
+            velocity *= (float)time;
             //velocity = velocity * Router.Init().graphicsControllers.time;
             float X = 0;
             float Y = 0;
@@ -47,11 +50,13 @@ namespace Sagittarius.Core{
             Y = ((float)((MathF.Sin((((Angle.X) * MathF.PI) / 180)) * velocity.X)));
             Y1 = ((float)((MathF.Sin((((90 - Angle.X) * MathF.PI) / 180)) * velocity.Y)));
 
-            Position -= new Vector3(0, Y, 0);
-            Position -= new Vector3(0, Y1, 0);
+            Position = movePosition;
 
-            Position -= new Vector3(X, 0, 0);
-            Position -= new Vector3(X1, 0, 0);
+            movePosition -= new Vector3(0, Y, 0);
+            movePosition -= new Vector3(0, Y1, 0);
+
+            movePosition -= new Vector3(X, 0, 0);
+            movePosition -= new Vector3(X1, 0, 0);
         }
 
         public bool TakeDamage(int Damage) {
@@ -62,9 +67,9 @@ namespace Sagittarius.Core{
             return IsLife;
         }
 
-        public void RotateX(float angle) => this.Angle += new Vector2(angle, 0);
+        public void RotateX(float angle, double time) => this.Angle += new Vector2((float)(angle * time), 0);
 
-        public void RotateY(float angle) => this.Angle += new Vector2(0, angle);
+        public void RotateY(float angle, double time) => this.Angle += new Vector2(0, (float)(angle * time));
         
 
     }
