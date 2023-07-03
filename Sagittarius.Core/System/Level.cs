@@ -6,7 +6,7 @@ namespace Sagittarius.Core;
 
 #pragma warning disable CS8618
 
-public class Level : IComponent{
+public class Level : IService{
 
     private List<BaseEntity> Entities;
 

@@ -1,6 +1,6 @@
 ﻿namespace Sagittarius.Core;
 
-interface IComponent{
+interface IService{
 
     void Start();
     void Updata(double args);

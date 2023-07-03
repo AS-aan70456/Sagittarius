@@ -27,33 +27,21 @@ public class GameController : BaseController {
         base.View = View;
     }
 
-    public override void Active(){
-
-    }
-
-    public override void Deactive(){
-        
-    }
 
     public override void Updata(double args){
 
-        Vector2 velocity = new Vector2();
-
         if (KeyBoard.IsKeyPressed('W'))
-            velocity += (5f, 0f);
+            camera.Move(5f, 0f, args);
         if (KeyBoard.IsKeyPressed('S'))
-            velocity += (-5f, 0f);
+            camera.Move(-5f, 0f, args);
         if (KeyBoard.IsKeyPressed('A'))
-            velocity += (0f, 2f);
+            camera.Move(0f, 2f, args);
         if (KeyBoard.IsKeyPressed('D'))
-            velocity += (0f, -2f);
+            camera.Move(0f, -2f, args);
         if (KeyBoard.IsKeyPressed('Q'))
             camera.RotateX(50, args);
         if (KeyBoard.IsKeyPressed('E'))
             camera.RotateX(-50, args);
-
-        camera.Move(velocity, args);
-        level.Updata(args);
 
         camera.Look();
         ((GameView)View).UpdataBuffer();
