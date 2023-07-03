@@ -20,7 +20,7 @@ namespace Sagittarius.Core{
             reyContainer = ReyCastService.ReyCastWall(this, fov, depth, countRey);
         }
 
-        public void Attach(ref Vector3 Position) => base.Position = Position;
+        public void Attach(ref Vector3 Position) => base.position = Position;
 
     }
 }

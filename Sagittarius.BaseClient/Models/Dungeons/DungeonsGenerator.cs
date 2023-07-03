@@ -131,7 +131,7 @@ class DungeonsGenerator{
                 char currentWall = Dangeons[currentPos.Y, currentPos.X];
 
                 if ((currentWall == '1' || currentWall == '4' || currentWall == '2') && !IsCreateDoor) {
-                    Dangeons[currentPos.Y, currentPos.X] = ' ';
+                    Dangeons[currentPos.Y, currentPos.X] = '4';
                     IsCreateDoor = true;
                 }
                 else{
@@ -145,7 +145,7 @@ class DungeonsGenerator{
                 char currentWall = Dangeons[currentPos.Y, currentPos.X];
 
                 if ((currentWall == '1' || currentWall == '4' || currentWall == '2') && !IsCreateDoor){
-                    Dangeons[currentPos.Y, currentPos.X] = ' ';
+                    Dangeons[currentPos.Y, currentPos.X] = '4';
                     IsCreateDoor = true;
                 }
                 else{

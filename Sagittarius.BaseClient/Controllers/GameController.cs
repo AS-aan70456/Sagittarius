@@ -53,7 +53,7 @@ public class GameController : BaseController {
             camera.RotateX(-50, args);
 
         camera.Move(velocity, args);
-        level.UpdataLevel(args);
+        level.Updata(args);
 
         camera.Look();
         ((GameView)View).UpdataBuffer();
