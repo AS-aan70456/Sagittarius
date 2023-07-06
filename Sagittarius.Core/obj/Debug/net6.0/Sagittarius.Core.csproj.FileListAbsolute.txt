@@ -10,3 +10,6 @@ C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\Sag
 C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\refint\Sagittarius.Core.dll
 C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\Sagittarius.Core.pdb
 C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\ref\Sagittarius.Core.dll
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\bin\Debug\net6.0\Sagittarius.Graphics.dll
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\bin\Debug\net6.0\Sagittarius.Graphics.pdb
+C:\Users\User\Desktop\Released\Sagittarius\Sagittarius.Core\obj\Debug\net6.0\Sagittarius.Core.csproj.CopyComplete

@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Sagittarius.Core\Sagittarius.Core.csproj" />
     <ProjectReference Include="..\Sagittarius.Graphics\Sagittarius.Graphics.csproj" />
     <ProjectReference Include="..\Sagittarius.Platform\Sagittarius.Platform.csproj" />

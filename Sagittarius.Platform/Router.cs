@@ -4,7 +4,7 @@ namespace Sagittarius.Platform;
 
 static class Router{
 
-    private static ControllerAdapter currentController;
+    private static SceneAdapter currentScene;
 
     public static Screen Screen;
     private static Window window;
@@ -16,24 +16,24 @@ static class Router{
 
     }
 
-    public static void Redirect(ControllerAdapter currentController){
-        if (Router.currentController == null){
-            Router.currentController = currentController;
-            Router.currentController.Active();
+    public static void Redirect(SceneAdapter currentController){
+        if (Router.currentScene == null){
+            Router.currentScene = currentController;
+            Router.currentScene.Active();
 
-            Screen.LoadView(Router.currentController.GetView());
-            window.SetController(currentController);
+            Screen.LoadScene(Router.currentScene);
+            window.LoadScene(currentController);
 
             window.Run();
             return;
         }
 
-        Router.currentController.Deactive();
-        Router.currentController = currentController;
-        Router.currentController.Active();
+        Router.currentScene.Deactive();
+        Router.currentScene = currentController;
+        Router.currentScene.Active();
 
-        Screen.LoadView(Router.currentController.GetView());
-        window.SetController(currentController);
+        Screen.LoadScene(Router.currentScene);
+        window.LoadScene(Router.currentScene);
     }
 }
 

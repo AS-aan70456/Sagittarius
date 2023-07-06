@@ -1,8 +1,11 @@
-﻿namespace Sagittarius.Core;
+﻿using Sagittarius.Graphics;
+using System.Diagnostics.Metrics;
 
-public class Player : BaseEntity{
+namespace Sagittarius.Core;
 
-    public Player(EntitySettings settings) : base(settings){
+public class Player : Camera{
+
+    public Player(EntitySettings settings, Level level) : base(settings, level){
 
     }
 

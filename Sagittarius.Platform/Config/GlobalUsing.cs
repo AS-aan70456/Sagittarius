@@ -7,4 +7,4 @@ global using OpenTK.Windowing.Desktop;
 global using OpenTK.Mathematics;
 
 global using Sagittarius.Platform.Config;
-
+global using Sagittarius.Core;

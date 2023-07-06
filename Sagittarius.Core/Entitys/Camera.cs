@@ -1,9 +1,10 @@
 ﻿using OpenTK.Mathematics;
 using Sagittarius.Core.Reycasting;
+using Sagittarius.Graphics;
 
 namespace Sagittarius.Core{
     public class Camera : BaseEntity{
- 
+        
         public ReyContainer[] reyContainer { get; private set; }
         private ReyCastService ReyCastService;
 
@@ -14,13 +15,14 @@ namespace Sagittarius.Core{
         public Camera(EntitySettings settings, Level level) : base(settings) {
             ReyCastService = new ReyCastService(level, true);
             reyContainer = new ReyContainer[0];
-        }
 
-        public void Look() {
-            reyContainer = ReyCastService.ReyCastWall(this, fov, depth, countRey);
         }
 
         public void Attach(ref Vector3 Position) => base.position = Position;
+
+        public override void Update(double args){
+            reyContainer = ReyCastService.ReyCastWall(this, fov, depth, countRey);
+        }
 
     }
 }

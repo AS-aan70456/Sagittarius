@@ -1,7 +1,10 @@
 ﻿using Sagittarius.Platform;
 using System.Reflection;
 
-class dll{
+#pragma warning disable CS8601
+
+class dll
+{
 
     object findDllClass = null;
     Type findClassType = null;
@@ -36,7 +39,7 @@ class dll{
         }
 
         if (findDllClass == null)
-            Console.WriteLine("Plugin" + FindClass + " not find");
+            Loger.WriteLine("Plugin" + FindClass + " not find");
 
         return new dllClass(findClassType, findDllClass);
     }

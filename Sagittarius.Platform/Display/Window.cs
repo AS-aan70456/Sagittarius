@@ -8,7 +8,7 @@ class Window : GameWindow{
     private double fps = 0f;
     private double offsetTime;
 
-    private ControllerAdapter currentController;
+    private SceneAdapter currentScene;
 
     public Window(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings)
 
@@ -24,8 +24,8 @@ class Window : GameWindow{
 
     }
 
-    public void SetController(ControllerAdapter Controller) {
-        currentController = Controller;
+    public void LoadScene(SceneAdapter Scene) {
+        currentScene = Scene;
     }
 
     protected override void OnLoad(){
@@ -52,7 +52,7 @@ class Window : GameWindow{
             fps = 0;
         }
 
-        currentController.Updata(args);
+        currentScene.Updata(args);
     }
 
     protected override void OnRenderFrame(FrameEventArgs args){
@@ -66,18 +66,18 @@ class Window : GameWindow{
     protected override void OnKeyDown(KeyboardKeyEventArgs e){
         base.OnKeyDown(e);
         KeyBoard.KeyDown(e.Key);
-        currentController.OnKeyDown(e);
+        currentScene.OnKeyDown(e);
     }
 
     protected override void OnKeyUp(KeyboardKeyEventArgs e){
         base.OnKeyDown(e);
         KeyBoard.KeyUp(e.Key);
-        currentController.OnKeyUp(e);
+        currentScene.OnKeyUp(e);
     }
 
     protected override void OnMouseMove(MouseMoveEventArgs e){
         base.OnMouseMove(e);
-        currentController.MouseMove(e);
+        currentScene.MouseMove(e);
     }
 }
 

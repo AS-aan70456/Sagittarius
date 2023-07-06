@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RsbttjCtp0j/yfZ8nL2VhH9vPn6Qq+/+GI0yw44RHKoxR7IwGM9FRcq+6Wq7R9o8bQ8e11rX5QjqsUKZzPlWIA==",
+  "dgSpecHash": "GkaRSc1cU63ZSEsWVKSgkMjiAymntwHxQj6vo6vRhSDKu/INJCFFLa7ftyAyLD1wZdGAMnJmRtYA7jAHgR3uAg==",
   "success": true,
   "projectFilePath": "C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.BaseClient\\Sagittarius.BaseClient.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\opentk\\4.7.7\\opentk.4.7.7.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\opentk.compute\\4.7.7\\opentk.compute.4.7.7.nupkg.sha512",
@@ -16,6 +17,7 @@
     "C:\\Users\\User\\.nuget\\packages\\opentk.windowing.common\\4.7.7\\opentk.windowing.common.4.7.7.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\opentk.windowing.desktop\\4.7.7\\opentk.windowing.desktop.4.7.7.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\4.7.7\\opentk.windowing.graphicslibraryframework.4.7.7.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],
   "logs": []

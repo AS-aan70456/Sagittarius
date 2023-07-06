@@ -1,4 +1,5 @@
 ﻿using OpenTK.Mathematics;
+using Sagittarius.Graphics;
 using System;
 using System.Collections.Generic;
 
@@ -6,7 +7,9 @@ namespace Sagittarius.Core;
 
 #pragma warning disable CS8618
 
-public class Level : IService{
+public class Level : IComponent, IRenderComponent{
+
+    public List<IRenderItem> renderItems { get; set; }
 
     private List<BaseEntity> Entities;
 
@@ -14,7 +17,7 @@ public class Level : IService{
 
     public Vector2i Size { get; private set; }
     public char[,] Map { get; set; }
-
+    
     private static char[] Void;
     private static char[] Half;
     private static char[] Transparent;
@@ -45,7 +48,7 @@ public class Level : IService{
         Entitie.isDeleted += Unsubscribe;
     }
 
-    public void Updata(double args){
+    public void Update(double args){
 
     }
 
@@ -110,5 +113,9 @@ public class Level : IService{
     public static bool Ishalf(char Cell){
         for (int i = 0; i < Half.Length; i++) if (Cell == Half[i]) return true; return false;
     }
-    
+
+
+    public void End(){}
+
+    public void Render(){}
 }

@@ -1,6 +1,6 @@
 ﻿namespace Sagittarius.Graphics;
 
-public class FrameBuffer{
+public class FrameBuffer : IRenderItem{
 
     public uint Height { get; }
     public uint Width { get; }
@@ -17,20 +17,6 @@ public class FrameBuffer{
 
         GL.GenTextures(1, out _gltexture);
 
-
-
-
-        // Load file meta data with FileInfo
-        FileInfo fileInfo = new FileInfo("Wall2.png");
-
-        // The byte[] to save the data in
-        byte[] data = new byte[fileInfo.Length];
-
-        // Load a filestream and put its content into the byte[]
-        using (FileStream fs = fileInfo.OpenRead())
-            fs.Read(data, 0, data.Length);
-
-        // Post byte[] to database
     }
 
 

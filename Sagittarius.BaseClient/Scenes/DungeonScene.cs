@@ -1,19 +1,19 @@
-﻿using Sagittarius.BaseClient.Views;
-using Sagittarius.Core;
-using System.Reflection.Emit;
+﻿using Sagittarius.Graphics;
+using Sagittarius.Platform.BaseComponent;
 
-namespace Sagittarius.BaseClient.Controllers;
+namespace Sagittarius.BaseClient.Scenes;
 
-public class GameController : BaseController {
+public class DungeonScene : GameScene{
 
     private Level level;
     private Camera camera;
 
-    public GameController() {
+    public DungeonScene(IRender render) : base(render){
 
         level = new DungeonsGenerator(567).GenerateDungeon(new Vector2i(32, 48), 8, 8);
 
-        camera = new Camera(new EntitySettings{
+        camera = new Camera(new EntitySettings
+        {
             Position = new Vector3(level.SpawnPoint.X, level.SpawnPoint.Y, 0.5f),
             Size = new Vector2(0.5f, 0.5f)
         }, level);
@@ -23,12 +23,17 @@ public class GameController : BaseController {
 
         level.AddEntity(camera);
 
-        GameView View = new GameView(camera);
-        base.View = View;
     }
 
+    public override void Start(){
+        base.Start();
 
-    public override void Updata(double args){
+        LoadCamera(camera);
+        AddComponent(level);
+    }
+
+    public override void Update(double args){
+        base.Update(args);
 
         if (KeyBoard.IsKeyPressed('W'))
             camera.Move(5f, 0f, args);
@@ -43,8 +48,7 @@ public class GameController : BaseController {
         if (KeyBoard.IsKeyPressed('E'))
             camera.RotateX(-50, args);
 
-        camera.Look();
-        ((GameView)View).UpdataBuffer();
     }
-}
 
+
+}

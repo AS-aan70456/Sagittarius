@@ -1,7 +1,9 @@
 ﻿#pragma warning disable CS8601
 
 using Sagittarius.Platform;
+using Sagittarius.Platform.BaseComponent;
 using Sagittarius.Platform.Config;
+using System.Drawing.Text;
 using System.Numerics;
 
 Loger.WriteLine("Starting Engine");
@@ -27,24 +29,39 @@ var WinSettings = new NativeWindowSettings(){
     NumberOfSamples = winSettings.NumberOfSamples,
 };
 
+Router.Init(WinSettings);
+
 // load dll game
 dll dllBaseClient = new dll(@"C:\\Users\\User\\Desktop\\Released\\Sagittarius\\Sagittarius.BaseClient\\bin\\Debug\\net6.0\\Sagittarius.BaseClient.dll");
-dllClass MainController = dllBaseClient.DllClass(EngSettings.mainController);
+dllClass MainController = dllBaseClient.DllClass(EngSettings.mainController, Router.Screen);
 
 //check for presence in hierarchy
+if (MainController == null) {
+    Loger.WriteLine("Head controller not found", LogMessageType.Fatal);
+    return;
+}
+
 Type isType = MainController.GetInstanceType();
-if ((isType.BaseType != new BaseController().GetType())) {
+
+
+if (!ChangeHierarchy(isType, new BaseScene().GetType())) {
     Loger.WriteLine("Head controller not in hierarchy", LogMessageType.Fatal);
     return;
 }
 
 Loger.WriteLine("Starting game");
 
-ControllerAdapter adapter = new ControllerAdapter(MainController);
+SceneAdapter adapter = new SceneAdapter(MainController);
 
 // Start game
-Router.Init(WinSettings);
+
 Router.Redirect(adapter);
+
+bool ChangeHierarchy(Type Type,Type type) {
+    if (Type == type) return true;
+    if (Type.BaseType != null) return ChangeHierarchy(Type.BaseType, type);
+    return true;
+}
 
 
 

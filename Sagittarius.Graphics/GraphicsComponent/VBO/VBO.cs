@@ -1,4 +1,4 @@
-﻿namespace VAO;
+﻿namespace Sagittarius.Graphics.GraphicsComponent;
 
 abstract class VBO{
 

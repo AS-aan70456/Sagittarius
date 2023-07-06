@@ -1,13 +1,13 @@
-﻿using Sagittarius.Core;
-using Sagittarius.Graphics;
+﻿using Sagittarius.Graphics;
+using Sagittarius.Platform.BaseComponent;
+using System.Drawing;
 
 namespace Sagittarius.Platform;
 
 #pragma warning disable CS8618
 
-public class Screen{
-    public Camera currentCamera { get; set; } 
-    private IView View;
+internal class Screen : IRender{
+    private SceneAdapter baseScene;
 
     public uint Width { get; }
     public uint Height { get; }
@@ -15,18 +15,19 @@ public class Screen{
     public Screen(uint Width, uint Height){
         this.Width = Width;
         this.Height = Height;
+    }
 
+    public void LoadScene(SceneAdapter baseScene){
+        this.baseScene = baseScene;
     }
 
     public void Render(){
-        View?.Render();
+        baseScene?.Render();
     }
 
-
-    public void LoadView(IView View){
-        this.View?.Deactive();
-        this.View = View;
-        this.View.Active(this);
+    public void Draw(IRenderComponent component){
+        
     }
+
 }
 
