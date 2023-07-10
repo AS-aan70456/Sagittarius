@@ -84,13 +84,14 @@ public class ReyCastService {
 
 
         //length check between vertical and horizontal reys
-        return Rey.HitDistribution(ReyHorizontal, ReyVertical, settings);
+        Rey rey = Rey.HitDistribution(ReyHorizontal, ReyVertical, settings);
+        return rey;
     }
 
     //function iterates beam radiation
     private Rey ReyPushStrategy(ReySettings settings) {
         Rey result = new Rey();
-
+        
         Vector2 reyPos = settings.strategy.StartReyPos(settings.Position.Xy, settings.angle);
         Wall reyWall = null;
 
@@ -105,16 +106,31 @@ public class ReyCastService {
                 return result;
             }
 
-            reyWall = level.Map[(int)reyPos.Y, (int)reyPos.X]; 
-            
+            reyWall = level.Map[(int)reyPos.Y, (int)reyPos.X];
+
+            result.Hit(new HitFlore(reyPos){
+                ReyDistance = GetDistance(
+                    new Vector3(reyPos.X, reyPos.Y, 0),
+                    settings.Position
+                ),
+                Wall = reyWall,
+            });
 
             if (!reyWall.isVoid) {
 
                 HitWall hit = new HitWall(reyPos);
 
-
-                if (reyWall.Half != Half.Fill)
+                if (reyWall.Half != Half.Fill){
                     hit.ReyPoint += settings.strategy.NextReyPos(settings.angle) / 2;
+
+                    result.Hit(new HitFlore(reyPos){
+                        ReyDistance = GetDistance(
+                            new Vector3(hit.ReyPoint.X, hit.ReyPoint.Y, 0),
+                            settings.Position
+                        ),
+                        Wall = reyWall,
+                    });
+                }
 
                 hit.ReyDistance = GetDistance(hit.ReyPoint, settings.Position.Xy);
                 hit.offset = settings.strategy.GetOfset(hit.ReyPoint);
@@ -122,19 +138,11 @@ public class ReyCastService {
 
                 result.Hit(hit);
 
-                if (!reyWall.isTransparent || !isTransparantTextures)
+                if (reyWall.isTransparent && isTransparantTextures)
+                    hit.Transplent = true;
+                else
                     return result;
-
             }
-
-            result.Hit(new HitFlore(){
-                ReyDistance = GetDistance(
-                    new Vector3(reyPos.X, reyPos.Y, 0), 
-                    settings.Position
-                ),
-                ReyPoint = reyPos,
-                Wall = reyWall,
-            });
 
             reyPos += settings.strategy.NextReyPos(settings.angle);
 

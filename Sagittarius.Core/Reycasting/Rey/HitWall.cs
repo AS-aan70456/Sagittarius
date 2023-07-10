@@ -9,6 +9,7 @@ namespace Sagittarius.Core{
             ReyDistance = 0;
             offset = 0;
             Wall = null;
+            Transplent = false;
         }
 
         public Vector2 ReyPoint { get; set; }
@@ -16,5 +17,7 @@ namespace Sagittarius.Core{
         public Wall Wall { get; set; }
 
         public float offset { get; set; }
+
+        public bool Transplent { get; set; }
     }
 }

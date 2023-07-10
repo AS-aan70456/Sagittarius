@@ -9,7 +9,7 @@ namespace Sagittarius.Core
         IEnumerable<Hit> GetFloreHit();
         IEnumerable<Hit> GetWallHit();
 
-        Hit GetLastHit(Hit type);
-        Hit GetFirstHit(Hit type);
+        Hit GetLastHit(Type type);
+        Hit GetFirstHit(Type type);
     }
 }

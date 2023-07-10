@@ -14,10 +14,7 @@ public class BaseScene : IComponent{
         this.screan = screan;
     }
 
-    public virtual void Start(){
-        
-
-    }
+    public virtual void Start(){}
    
     public virtual  void Update(double args){
         foreach (IComponent el in gameElements)

@@ -23,41 +23,51 @@ namespace Sagittarius.Core
             int n = reyHorizontal.HitPoints.Count;
             int m = reyVertecal.HitPoints.Count;
 
-            while ((indexHorizontal < n) || (indexVertical < m))
-            {
-                if ((indexHorizontal < n) && (indexVertical < m))
-                {
+            while ((indexHorizontal < n) || (indexVertical < m)){
+
+                if ((indexHorizontal < n) && (indexVertical < m)){
+
                     if (reyHorizontal.HitPoints[indexHorizontal].ReyDistance < reyVertecal.HitPoints[indexVertical].ReyDistance)
                         resultRey.HitPoints.Add(reyHorizontal.HitPoints[indexHorizontal++]);
                     else
                         resultRey.HitPoints.Add(reyVertecal.HitPoints[indexVertical++]);
                 }
-                else
-                {
+                else{
+
                     if (indexHorizontal < n)
                         resultRey.HitPoints.Add(reyHorizontal.HitPoints[indexHorizontal++]);
                     else
                         resultRey.HitPoints.Add(reyVertecal.HitPoints[indexVertical++]);
                 }
+
+
+                if (resultRey.GetLastHit().Transplent == false)
+                    break;
             }
 
             float angle = settings.angle - settings.entityAngle;
             foreach (var hit in resultRey.HitPoints)
                 hit.ReyDistance *= MathF.Cos((angle * MathF.PI) / 180);
 
-            resultRey.HitPoints.Remove(resultRey.HitPoints.Last());
+            
+
             resultRey.HitPoints.Reverse();
             return resultRey;
         }
 
         public void Hit(Hit hit) =>
             HitPoints.Add(hit);
-        
-        public Hit GetLastHit(Hit type) =>
-             (HitPoints.FindAll(hit => hit.GetType() == type.GetType()).Last());
 
-        public Hit GetFirstHit(Hit type) =>
-             (HitPoints.FindAll(hit => hit.GetType() == type.GetType()).First());
+        public Hit GetFirstHit() =>
+             HitPoints.First();
+        public Hit GetLastHit() =>
+             HitPoints.Last();
+
+        public Hit GetLastHit(Type type) =>
+             (HitPoints.FindAll(hit => hit.GetType() == type).Last());
+
+        public Hit GetFirstHit(Type type) =>
+             (HitPoints.FindAll(hit => hit.GetType() == type).First());
 
 
         public IEnumerable<Hit> GetWallHit() =>

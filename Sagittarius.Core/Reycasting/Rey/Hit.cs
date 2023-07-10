@@ -8,5 +8,6 @@ namespace Sagittarius.Core
         public float ReyDistance { get; set; }
         public Wall Wall { get; set; }
 
+        public bool Transplent { get; set; }
     }
 }

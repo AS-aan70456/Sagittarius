@@ -19,7 +19,6 @@ public class DungeonScene : GameScene{
     }
 
     public override void Start(){
-        base.Start();
 
         level = new DungeonsGenerator(567).GenerateDungeon(new Vector2i(32, 48), 8, 8);
 

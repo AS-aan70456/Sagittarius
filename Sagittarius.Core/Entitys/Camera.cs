@@ -8,6 +8,8 @@ namespace Sagittarius.Core{
         public ReyContainer[] reyContainer { get; private set; }
         private ReyCastService ReyCastService;
 
+        public Vector2 Center { get { return Position.Xy + (Size / 2); } }
+
         public uint countRey;
         public uint depth;
         public uint fov;
