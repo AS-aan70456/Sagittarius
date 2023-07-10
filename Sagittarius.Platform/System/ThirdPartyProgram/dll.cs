@@ -3,11 +3,8 @@ using System.Reflection;
 
 #pragma warning disable CS8601
 
-class dll
-{
+class dll{
 
-    object findDllClass = null;
-    Type findClassType = null;
     Type[] ListTypes = null;
 
     public dll(string path) {
@@ -23,7 +20,9 @@ class dll
     public dllClass DllClass(string FindClass) => DllClass(FindClass, null);
 
     public dllClass DllClass(string FindClass, params object[] argsClass) {
-        findDllClass = null;
+        object findDllClass = null;
+        Type findClassType = null;
+
         if (ListTypes == null) return null;
 
         foreach (Type type in ListTypes){

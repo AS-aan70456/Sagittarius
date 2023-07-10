@@ -2,6 +2,7 @@
 using Sagittarius.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Sagittarius.Core;
 
@@ -16,26 +17,19 @@ public class Level : IComponent, IRenderComponent{
     public Vector2i SpawnPoint { get; private set; }
 
     public Vector2i Size { get; private set; }
-    public char[,] Map { get; set; }
+    public Wall[,] Map { get; set; }
     
-    private static char[] Void;
-    private static char[] Half;
-    private static char[] Transparent;
-    private static char[] Collision;
 
-    public char this[int i, int j] { get { return Map[i, j]; } }
 
-    public Level(char[,] Map, Vector2i Size, Vector2i SpawnPoint){
+    public Wall this[int i, int j] { get { return Map[i, j]; } }
+
+    public Level(Wall[,] Map, Vector2i Size, Vector2i SpawnPoint){
         Entities = new List<BaseEntity>();
 
         this.Map = Map;
         this.Size = Size;
         this.SpawnPoint = SpawnPoint;
 
-        Void = new char[] { ' ' };
-        Transparent = new char[] { '3', '5' };
-        Collision = new char[] { '0', '1', '2' };
-        Half = new char[] { '3', '4', '5' };
     }
 
     public void Start(){
@@ -61,7 +55,7 @@ public class Level : IComponent, IRenderComponent{
 
         for (int i = (int)(prePosition.Y) ; i < (prePosition.Y + Size.Y) ; i++){
             for (int j = (int)(Position.X); j < (Position.X + Size.X); j++){
-                if (Level.IsCollision(this[i, j])){
+                if (this[i, j].isCollision){
                     float dx1 = MathF.Abs(j - Center.X);
                     float dx2 = MathF.Abs((j + 1) - Center.X);
 
@@ -77,7 +71,7 @@ public class Level : IComponent, IRenderComponent{
 
         for (int i = (int)(Position.Y); i < (Position.Y + Size.Y); i++){
             for (int j = (int)(Position.X); j < (Position.X + Size.X); j++){
-                if (Level.IsCollision(this[i, j])){
+                if (this[i, j].isCollision){
                     float dy1 = MathF.Abs(i - Center.Y);
                     float dy2 = MathF.Abs((i + 1) - Center.Y);
 
@@ -96,22 +90,6 @@ public class Level : IComponent, IRenderComponent{
     private void Unsubscribe(BaseEntity Entitie) {
         Entitie.isMoved -= ColisionEntity;
         Entitie.isDeleted -= Unsubscribe;
-    }
-
-    public static bool IsVoid(char Cell){
-        for (int i = 0; i < Void.Length; i++) if (Cell == Void[i]) return true; return false;
-    }
-
-    public static bool IsTransparent(char Cell){
-        for (int i = 0; i < Transparent.Length; i++) if (Cell == Transparent[i]) return true; return false;
-    }
-
-    public static bool IsCollision(char Cell){
-        for (int i = 0; i < Collision.Length; i++) if (Cell == Collision[i]) return true; return false;
-    }
-
-    public static bool Ishalf(char Cell){
-        for (int i = 0; i < Half.Length; i++) if (Cell == Half[i]) return true; return false;
     }
 
 

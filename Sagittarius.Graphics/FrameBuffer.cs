@@ -101,4 +101,30 @@ public class FrameBuffer : IRenderItem{
         }
     }
 
+    public void Fill(int X1, int Y1, int X2, int Y2, Color[] color){
+
+        int preX1 = X1;
+        int preX2 = X2;
+
+        if (X1 > Height) X1 = (int)Height;
+        if (X1 < 0) X1 = 0;
+
+        if (Y1 > Width) Y1 = (int)Width;
+        if (Y1 < 0) X1 = 0;
+
+        if (X2 > Height) X2 = (int)Height;
+        if (X2 < 0) X2 = 0;
+
+        if (Y2 > Width) Y2 = (int)Width;
+        if (Y2 < 0) Y2 = 0;
+
+        for (int y = X1; y < X2; y++)
+        {
+            for (int x = Y1; x < Y2; x++)
+            {
+                SetPixel(x, y, color[(int)(((float)(y - preX1) / (float)(preX2 - preX1)) * 16)]);
+            }
+        }
+    }
+
 }

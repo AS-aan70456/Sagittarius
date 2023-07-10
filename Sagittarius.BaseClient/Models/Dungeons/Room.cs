@@ -9,7 +9,7 @@ class Room
     public Vector2i Size { get; private set; }
     public Vector2i Center { get { return(Position + (Size / 2)); } }
 
-    public char[,] Structure { get; private set; }
+    public Wall[,] Structure { get; private set; }
 
     public Room(){
         Position = new Vector2i();
@@ -19,20 +19,20 @@ class Room
     public static Room GenerateRoom(Vector2i Size, Vector2i chankPos, int chankSize) {
         Room room = new Room();
 
-        room.Structure = new char[Size.X, Size.Y];
+        room.Structure = new Wall[Size.X, Size.Y];
         room.Size = Size;
         room.Position = new Vector2i(chankPos.X + ((chankSize - Size.X) / 2), chankPos.Y + ((chankSize - Size.Y) / 2));
+
+
 
         for (int i = 0; i < Size.Y; i++){
             for (int j = 0; j < Size.X; j++){
                 if (i == 0 || j == 0 || i == Size.Y - 1 || j == Size.X - 1){
-                    if ((i + j) % 5 != 0)
-                        room.Structure[j, i] = '1'; 
-                    else
-                        room.Structure[j, i] = '2';
+                    room.Structure[j, i] = ResurseMeneger.GetWall("Wall"); 
+
                 }
                 else{
-                    room.Structure[j, i] = ' ';
+                    room.Structure[j, i] = ResurseMeneger.GetWall("Void");
                 }
             }
         }

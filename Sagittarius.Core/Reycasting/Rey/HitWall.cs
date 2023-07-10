@@ -8,12 +8,12 @@ namespace Sagittarius.Core{
             ReyPoint = Point;
             ReyDistance = 0;
             offset = 0;
-            Wall = '0';
+            Wall = null;
         }
 
         public Vector2 ReyPoint { get; set; }
         public float ReyDistance { get; set; }
-        public char Wall { get; set; }
+        public Wall Wall { get; set; }
 
         public float offset { get; set; }
     }

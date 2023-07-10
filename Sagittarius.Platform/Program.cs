@@ -8,6 +8,26 @@ using System.Numerics;
 
 Loger.WriteLine("Starting Engine");
 
+
+
+
+//RepWall DoorV = new RepWall(){
+//    Id = 2,
+//    Name = "DoorV",
+//    Half = Sagittarius.Core.Half.VerticalHalf,
+//    isCollision = true,
+//    isVoid = false,
+//    isTransparent = false,
+//    pathTextureH = "Img/Walss/Door.png",
+//    pathTextureV = "Img/Walss/Door.png",
+//};
+
+
+//FileSystem.WriteObject<RepWall>(DoorV, @"Resurces\Walls\DoorV.json");
+//FileSystem.WriteObject<RepWall>(DoorH, @"Resurces\Walls\DoorH.json");
+
+ResurseMeneger.Init();
+
 // load game setting
 WindowSettings winSettings = FileSystem.ReadObject<WindowSettings>(@"xml\\NativeWindowSettings.xml");
 EngineSettings EngSettings = FileSystem.ReadObject<EngineSettings>(@"xml\\GameSettings.xml");
@@ -54,7 +74,6 @@ Loger.WriteLine("Starting game");
 SceneAdapter adapter = new SceneAdapter(MainController);
 
 // Start game
-
 Router.Redirect(adapter);
 
 bool ChangeHierarchy(Type Type,Type type) {

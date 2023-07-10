@@ -1,5 +1,6 @@
 ﻿using Sagittarius.Graphics;
 using System.Diagnostics.Metrics;
+using System.Drawing;
 
 namespace Sagittarius.Platform.BaseComponent;
 
@@ -46,7 +47,7 @@ public class GameScene : BaseScene{
             index,
             (int)((frameBuffer.Height / 2) * (1 + (1 / HitWall.ReyDistance))),
         index + 1,
-        System.Drawing.Color.White
+        HitWall.Wall.textureHprizontal.GetSlice((int)(HitWall.offset * 16))
         );
     }
 }

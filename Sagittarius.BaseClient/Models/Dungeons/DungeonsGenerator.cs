@@ -37,7 +37,7 @@ class DungeonsGenerator{
         GenerateRoom();
         CreateWindows();
 
-        char[,] Dangeons = CreateCorridor(RoomsToCharArry(rooms));
+        Wall[,] Dangeons = CreateCorridor(RoomsToCharArry(rooms));
         Level = new Level(Dangeons, new Vector2i(Dangeons.GetLength(1), Dangeons.GetLength(0)), rooms[0].Center);
 
         return Level;
@@ -105,7 +105,7 @@ class DungeonsGenerator{
         }
     }
 
-    private char[,] CreateCorridor(char[,] Dangeons) {
+    private Wall[,] CreateCorridor(Wall[,] Dangeons) {
         List<NodeData> endPoinds = graph.GetDataNode();
 
         foreach (var el in endPoinds) {
@@ -128,28 +128,28 @@ class DungeonsGenerator{
 
             for (int x = 0; x < Math.Abs(leght.Y); x++) {
 
-                char currentWall = Dangeons[currentPos.Y, currentPos.X];
+                Wall currentWall = Dangeons[currentPos.Y, currentPos.X];
 
-                if ((currentWall == '1' || currentWall == '4' || currentWall == '2') && !IsCreateDoor) {
-                    Dangeons[currentPos.Y, currentPos.X] = '4';
+                if ((currentWall.isCollision == true) && !IsCreateDoor) {
+                    Dangeons[currentPos.Y, currentPos.X] = ResurseMeneger.GetWall("DoorV");
                     IsCreateDoor = true;
                 }
                 else{
-                    Dangeons[currentPos.Y, currentPos.X] = ' ';
+                    Dangeons[currentPos.Y, currentPos.X] = ResurseMeneger.GetWall("Void");
                     IsCreateDoor = false;
                 }
                 currentPos.Y += offsetY;
             }
             for (int y = 0; y < Math.Abs(leght.X); y++){
 
-                char currentWall = Dangeons[currentPos.Y, currentPos.X];
+                Wall currentWall = Dangeons[currentPos.Y, currentPos.X];
 
-                if ((currentWall == '1' || currentWall == '4' || currentWall == '2') && !IsCreateDoor){
-                    Dangeons[currentPos.Y, currentPos.X] = '4';
+                if ((currentWall.isCollision == true) && !IsCreateDoor){
+                    Dangeons[currentPos.Y, currentPos.X] = ResurseMeneger.GetWall("DoorH");
                     IsCreateDoor = true;
                 }
                 else{
-                    Dangeons[currentPos.Y, currentPos.X] = ' ';
+                    Dangeons[currentPos.Y, currentPos.X] = ResurseMeneger.GetWall("Void");
                     IsCreateDoor = false;
                 }
                 currentPos.X += offsetX;
@@ -163,8 +163,8 @@ class DungeonsGenerator{
     
     }
 
-    private char[,] RoomsToCharArry(List<Room> rooms) {
-        char[,] result;
+    private Wall[,] RoomsToCharArry(List<Room> rooms) {
+        Wall[,] result;
 
         Vector2i MaxSize = new Vector2i();
         Vector2i MinSize = new Vector2i();
@@ -179,11 +179,11 @@ class DungeonsGenerator{
 
         Vector2i Size = (-MinSize) + MaxSize;
 
-        result = new char[Size.Y, Size.X];
+        result = new Wall[Size.Y, Size.X];
 
         for (int y = 0; y < Size.Y; y++)
             for (int x = 0; x < Size.X; x++)
-                result[y, x] = '0';
+                result[y, x] = ResurseMeneger.GetWall("Void");
 
         for (int room = 0; room < rooms.Count; room++)
             for (int i = (rooms[room].Position.Y) + (-MinSize.Y); i < (rooms[room].Position.Y + rooms[room].Size.Y) + (-MinSize.Y); i++)

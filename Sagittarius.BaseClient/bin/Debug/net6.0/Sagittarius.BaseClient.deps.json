@@ -211,7 +211,8 @@
       },
       "Sagittarius.Graphics/1.0.0": {
         "dependencies": {
-          "OpenTK": "4.7.7"
+          "OpenTK": "4.7.7",
+          "System.Drawing.Common": "7.0.0"
         },
         "runtime": {
           "Sagittarius.Graphics.dll": {}

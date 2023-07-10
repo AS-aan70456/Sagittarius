@@ -1,4 +1,5 @@
 ﻿using System;
+using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using Sagittarius.Core;
 
@@ -91,7 +92,7 @@ public class ReyCastService {
         Rey result = new Rey();
 
         Vector2 reyPos = settings.strategy.StartReyPos(settings.Position.Xy, settings.angle);
-        char reyWall = ' ';
+        Wall reyWall = null;
 
         for (int i = 0; i < settings.depth; i++) {
 
@@ -99,7 +100,7 @@ public class ReyCastService {
                 result.Hit(new HitWall() {
                     ReyDistance = GetDistance(reyPos, settings.Position.Xy),
                     ReyPoint = reyPos,
-                    Wall = '0'
+                    Wall = null
                 });
                 return result;
             }
@@ -107,20 +108,21 @@ public class ReyCastService {
             reyWall = level.Map[(int)reyPos.Y, (int)reyPos.X]; 
             
 
-            if (!Level.IsVoid(reyWall)) {
+            if (!reyWall.isVoid) {
 
                 HitWall hit = new HitWall(reyPos);
 
-                if (Level.Ishalf(reyWall))
+
+                if (reyWall.Half != Half.Fill)
                     hit.ReyPoint += settings.strategy.NextReyPos(settings.angle) / 2;
-                
+
                 hit.ReyDistance = GetDistance(hit.ReyPoint, settings.Position.Xy);
                 hit.offset = settings.strategy.GetOfset(hit.ReyPoint);
                 hit.Wall = reyWall;
 
                 result.Hit(hit);
 
-                if (!Level.IsTransparent(reyWall) || !isTransparantTextures)
+                if (!reyWall.isTransparent || !isTransparantTextures)
                     return result;
 
             }
@@ -144,7 +146,7 @@ public class ReyCastService {
                 settings.Position
             ),
             ReyPoint = reyPos,
-            Wall = '0'
+            Wall = null
         });
 
         return result;

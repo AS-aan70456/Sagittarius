@@ -1,0 +1,10 @@
+{
+  "pathTextureH": "Resurces/Img/Walss/Wall2.png",
+  "pathTextureV": "Resurces/Img/Walss/Wall2.png",
+  "Name": "Wall",
+  "Id": 1,
+  "isVoid": false,
+  "Half": 0,
+  "isTransparent": false,
+  "isCollision": true
+}

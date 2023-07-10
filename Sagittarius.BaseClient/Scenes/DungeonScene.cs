@@ -10,6 +10,17 @@ public class DungeonScene : GameScene{
 
     public DungeonScene(IRender render) : base(render){
 
+        ResurseMeneger.LoadWall(FileSystem.GetPath(@"Resurces/Walls/Void.json"));
+        ResurseMeneger.LoadWall(FileSystem.GetPath(@"Resurces/Walls/Wall.json"));
+        ResurseMeneger.LoadWall(FileSystem.GetPath(@"Resurces/Walls/DoorH.json"));
+        ResurseMeneger.LoadWall(FileSystem.GetPath(@"Resurces/Walls/DoorV.json"));
+
+
+    }
+
+    public override void Start(){
+        base.Start();
+
         level = new DungeonsGenerator(567).GenerateDungeon(new Vector2i(32, 48), 8, 8);
 
         camera = new Camera(new EntitySettings
@@ -22,11 +33,6 @@ public class DungeonScene : GameScene{
         camera.depth = 16;
 
         level.AddEntity(camera);
-
-    }
-
-    public override void Start(){
-        base.Start();
 
         LoadCamera(camera);
         AddComponent(level);
@@ -49,6 +55,5 @@ public class DungeonScene : GameScene{
             camera.RotateX(-50, args);
 
     }
-
 
 }
