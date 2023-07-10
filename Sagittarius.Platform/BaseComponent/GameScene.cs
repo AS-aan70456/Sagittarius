@@ -44,7 +44,7 @@ public class GameScene : BaseScene{
         
 
         for (int i = 0; i < camera.countRey; i++)
-            DrawWall((HitWall)camera.reyContainer[i].GetLastHit(new HitWall().GetType()), i);
+            DrawWall((HitWall)camera.reyContainer[i].GetFirstHit(new HitWall().GetType()), i);
 
         
     }
@@ -95,6 +95,8 @@ public class GameScene : BaseScene{
     }
 
     private void DrawWall(HitWall HitWall, int index){
+        if (HitWall.Wall == null) return;
+
         frameBuffer.Fill(
             (int)((frameBuffer.Height / 2) * (1.0f - (1.0f / HitWall.ReyDistance))),
             index,

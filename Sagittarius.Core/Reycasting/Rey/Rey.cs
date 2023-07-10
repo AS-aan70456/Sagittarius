@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace Sagittarius.Core
 {
@@ -40,7 +41,6 @@ namespace Sagittarius.Core
                         resultRey.HitPoints.Add(reyVertecal.HitPoints[indexVertical++]);
                 }
 
-
                 if (resultRey.GetLastHit().Transplent == false)
                     break;
             }
@@ -49,6 +49,7 @@ namespace Sagittarius.Core
             foreach (var hit in resultRey.HitPoints)
                 hit.ReyDistance *= MathF.Cos((angle * MathF.PI) / 180);
 
+            resultRey.Short();
             return resultRey;
         }
 
@@ -73,6 +74,8 @@ namespace Sagittarius.Core
         public IEnumerable<Hit> GetFloreHit() =>
              HitPoints.Where(hit => hit.GetType() == new HitFlore().GetType());
 
-
+        public void Short() {
+            HitPoints = HitPoints.OrderByDescending(t => -t.ReyDistance).ToList();
+        }
     }
 }

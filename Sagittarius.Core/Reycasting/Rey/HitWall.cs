@@ -2,7 +2,9 @@
 
 
 namespace Sagittarius.Core{
-    public struct HitWall : Hit{
+    public class HitWall : Hit{
+
+        public HitWall() { }
 
         public HitWall(Vector2 Point) {
             ReyPoint = Point;

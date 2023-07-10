@@ -98,9 +98,8 @@ public class ReyCastService {
         for (int i = 0; i < settings.depth; i++) {
 
             if (reyPos.X < 0 || reyPos.Y < 0 || reyPos.Y > level.Size.Y - 1|| reyPos.X > level.Size.X - 1) {
-                result.Hit(new HitWall() {
+                result.Hit(new HitWall(reyPos) {
                     ReyDistance = GetDistance(reyPos, settings.Position.Xy),
-                    ReyPoint = reyPos,
                     Wall = null
                 });
                 return result;
@@ -119,28 +118,28 @@ public class ReyCastService {
             if (!reyWall.isVoid) {
 
                 HitWall hit = new HitWall(reyPos);
+                result.Hit(hit);
 
                 if (reyWall.Half != Half.Fill){
-                    Vector2 UnderTransparent = reyPos += settings.strategy.NextReyPos(settings.angle) / 2;
+                    Vector2 UnderTransparent = reyPos += settings.strategy.NextReyPos(settings.angle);
 
-                    result.Hit(new HitFlore(){
+                    result.Hit(new HitFlore(UnderTransparent){
                         ReyDistance = GetDistance(
                             new Vector3(UnderTransparent.X, UnderTransparent.Y, 0),
                             settings.Position
                         ),
-                        ReyPoint = UnderTransparent,
                         Wall = reyWall,
                         Transplent = true
                     });
 
                     hit.ReyPoint += settings.strategy.NextReyPos(settings.angle) / 2;
+                    hit.Transplent = true;
                 }
 
                 hit.ReyDistance = GetDistance(hit.ReyPoint, settings.Position.Xy);
                 hit.offset = settings.strategy.GetOfset(hit.ReyPoint);
                 hit.Wall = reyWall;
 
-                result.Hit(hit);
 
                 if (reyWall.isTransparent && isTransparantTextures)
                     hit.Transplent = true;
@@ -152,7 +151,8 @@ public class ReyCastService {
 
         }
 
-        result.Hit(new HitWall(){
+        result.Hit(new HitWall(reyPos)
+        {
             ReyDistance = GetDistance(
                 new Vector3(reyPos.X, reyPos.Y, 0),
                 settings.Position

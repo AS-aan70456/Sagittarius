@@ -3,7 +3,9 @@
 
 namespace Sagittarius.Core
 {
-    public struct HitFlore : Hit {
+    public class HitFlore : Hit {
+
+        public HitFlore() { }
 
         public HitFlore(Vector2 Point) {
             ReyPoint = Point;
