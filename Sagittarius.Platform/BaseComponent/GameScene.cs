@@ -1,4 +1,5 @@
-﻿using Sagittarius.Graphics;
+﻿using Sagittarius.Core;
+using Sagittarius.Graphics;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 
@@ -36,46 +37,52 @@ public class GameScene : BaseScene{
     }
 
     private void DrawDisplay(){
-        for (int i = 0; i < camera.countRey; i++)
-            DrawFlore(camera.reyContainer[i].GetFloreHit(), i);
+        
         
         for (int i = 0; i < camera.countRey; i++)
             DrawWall((HitWall)camera.reyContainer[i].GetLastHit(new HitWall().GetType()), i);
+
+        for (int i = 0; i < camera.countRey; i++)
+            DrawFlore(camera.reyContainer[i].GetFloreHit(), i);
     }
 
     private void DrawFlore(IEnumerable<Hit> HitsFlore, int index){
 
-        Hit preHitFlore = null;
+        Hit preHitFlore = new HitFlore(){
+            ReyDistance = 0,
+            ReyPoint = camera.Center,
+            Wall = null,
+        };
 
 
-        foreach (Hit hitFlore in HitsFlore) {
-            if (preHitFlore == null)
-                preHitFlore = new HitFlore(){
-                    ReyDistance = 0,
-                    ReyPoint = camera.Center,
-                    Wall = hitFlore.Wall,
-                };
+        Hit hitFlore = HitsFlore.First();
 
             Color color = Color.Yellow;
 
             if (((float)((int)hitFlore.ReyPoint.X + (int)hitFlore.ReyPoint.Y)) % 2f == 0)
                 color = Color.Green;
 
+
+            int Y1ofset = (int)((frameBuffer.Height / 2) * (1.0f - (1.0f / 1.0f)));
+            int Y2ofset = (int)((frameBuffer.Height / 2) * (1.0f - (1.0f / hitFlore.ReyDistance)));
+
             frameBuffer.Fill(
-            (int)(preHitFlore.ReyDistance * 25),
+            Y1ofset,
             index,
-            (int)(hitFlore.ReyDistance * 25),
+            Y2ofset,
             index + 1,
             color
             );
-        }
+
+            preHitFlore = hitFlore;
+        
     }
 
     private void DrawWall(HitWall HitWall, int index){
         frameBuffer.Fill(
-            (int)((frameBuffer.Height / 2) * (1 - (1 / HitWall.ReyDistance))),
+            (int)((frameBuffer.Height / 2) * (1.0f - (1.0f / HitWall.ReyDistance))),
             index,
-            (int)((frameBuffer.Height / 2) * (1 + (1 / HitWall.ReyDistance))),
+            (int)((frameBuffer.Height / 2) * (1.0f + (1.0f / HitWall.ReyDistance))),
             index + 1,
             HitWall.Wall.textureHprizontal.GetSlice((int)(HitWall.offset * 16))
         );

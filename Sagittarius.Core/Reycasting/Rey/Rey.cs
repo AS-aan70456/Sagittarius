@@ -49,9 +49,6 @@ namespace Sagittarius.Core
             foreach (var hit in resultRey.HitPoints)
                 hit.ReyDistance *= MathF.Cos((angle * MathF.PI) / 180);
 
-            
-
-            resultRey.HitPoints.Reverse();
             return resultRey;
         }
 
