@@ -121,15 +121,19 @@ public class ReyCastService {
                 HitWall hit = new HitWall(reyPos);
 
                 if (reyWall.Half != Half.Fill){
-                    hit.ReyPoint += settings.strategy.NextReyPos(settings.angle) / 2;
+                    Vector2 UnderTransparent = reyPos += settings.strategy.NextReyPos(settings.angle) / 2;
 
-                    result.Hit(new HitFlore(reyPos){
+                    result.Hit(new HitFlore(){
                         ReyDistance = GetDistance(
-                            new Vector3(hit.ReyPoint.X, hit.ReyPoint.Y, 0),
+                            new Vector3(UnderTransparent.X, UnderTransparent.Y, 0),
                             settings.Position
                         ),
+                        ReyPoint = UnderTransparent,
                         Wall = reyWall,
+                        Transplent = true
                     });
+
+                    hit.ReyPoint += settings.strategy.NextReyPos(settings.angle) / 2;
                 }
 
                 hit.ReyDistance = GetDistance(hit.ReyPoint, settings.Position.Xy);

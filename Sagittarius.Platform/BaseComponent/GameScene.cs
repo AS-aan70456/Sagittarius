@@ -21,7 +21,6 @@ public class GameScene : BaseScene{
     public override void Render(){
         frameBuffer.Draw();
 
-        frameBuffer.ClearBuffer();
         base.Render();
     }
 
@@ -37,45 +36,62 @@ public class GameScene : BaseScene{
     }
 
     private void DrawDisplay(){
+        for (int i = 0; i < camera.countRey; i++)
+            DrawFlore(camera.reyContainer[i].GetFloreHit(), i);
+
+        for (int i = 0; i < camera.countRey; i++)
+            DrawCeiling(camera.reyContainer[i].GetFloreHit(), i);
         
-        
+
         for (int i = 0; i < camera.countRey; i++)
             DrawWall((HitWall)camera.reyContainer[i].GetLastHit(new HitWall().GetType()), i);
 
-        for (int i = 0; i < camera.countRey; i++)
-            DrawFlore(camera.reyContainer[i].GetFloreHit(), i);
+        
     }
 
     private void DrawFlore(IEnumerable<Hit> HitsFlore, int index){
 
-        Hit preHitFlore = new HitFlore(){
-            ReyDistance = 0,
-            ReyPoint = camera.Center,
-            Wall = null,
-        };
-
-
-        Hit hitFlore = HitsFlore.First();
+        float preDistance = 1.0f;
+        foreach (Hit hitFlore in HitsFlore){
 
             Color color = Color.Yellow;
 
             if (((float)((int)hitFlore.ReyPoint.X + (int)hitFlore.ReyPoint.Y)) % 2f == 0)
                 color = Color.Green;
 
-
-            int Y1ofset = (int)((frameBuffer.Height / 2) * (1.0f - (1.0f / 1.0f)));
-            int Y2ofset = (int)((frameBuffer.Height / 2) * (1.0f - (1.0f / hitFlore.ReyDistance)));
-
             frameBuffer.Fill(
-            Y1ofset,
+            (int)((frameBuffer.Height / 2) * (1.0f - (1.0f / preDistance))),
             index,
-            Y2ofset,
+            (int)((frameBuffer.Height / 2) * (1.0f - (1.0f / hitFlore.ReyDistance))),
             index + 1,
             color
             );
 
-            preHitFlore = hitFlore;
-        
+            preDistance = hitFlore.ReyDistance;
+        }
+    }
+
+    private void DrawCeiling(IEnumerable<Hit> HitsFlore, int index){
+
+        float preDistance = 1.0f;
+        foreach (Hit hitFlore in HitsFlore)
+        {
+
+            Color color = Color.Yellow;
+
+            if (((float)((int)hitFlore.ReyPoint.X + (int)hitFlore.ReyPoint.Y)) % 2f == 0)
+                color = Color.Green;
+
+            frameBuffer.Fill(
+            (int)((frameBuffer.Height / 2) * (1.0f + (1.0f / hitFlore.ReyDistance))),
+            index,
+            (int)((frameBuffer.Height / 2) * (1.0f + (1.0f / preDistance))),
+            index + 1,
+            color
+            );
+
+            preDistance = hitFlore.ReyDistance;
+        }
     }
 
     private void DrawWall(HitWall HitWall, int index){
